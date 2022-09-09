@@ -15,6 +15,10 @@ class AppModule extends Module {
     Modular.to.pushNamed('/detail/$id');
   }
 
+  static void back() {
+    Modular.to.pop();
+  }
+
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const Home()),

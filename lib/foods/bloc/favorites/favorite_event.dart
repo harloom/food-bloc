@@ -10,3 +10,20 @@ abstract class FavoriteEvent extends Equatable {
 class GetFavoriteList extends FavoriteEvent {
   const GetFavoriteList();
 }
+
+class AddFavorite extends FavoriteEvent {
+  final MealEntityCompanion entity;
+  const AddFavorite(this.entity);
+}
+
+class RemoveFavorite extends FavoriteEvent {
+  final String id;
+
+  const RemoveFavorite(this.id);
+}
+
+class GetFavoriteById extends FavoriteEvent {
+  final String id;
+
+  const GetFavoriteById(this.id);
+}

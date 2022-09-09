@@ -12,12 +12,15 @@ class FavoriteInitial extends FavoriteState {}
 class FavoriteLoading extends FavoriteState {}
 
 class FavoriteLoaded extends FavoriteState {
-  final List<MealEntityData> list;
-  const FavoriteLoaded(this.list);
+  List<MealEntityData> list;
+  MealEntityData? mealFavorite;
 
-  FavoriteLoaded copyWith({List<MealEntityData>? list}) {
-    return FavoriteLoaded(list ?? this.list);
-  }
+  FavoriteLoaded(this.list, {this.mealFavorite});
+
+  FavoriteLoaded copyWith(
+          {List<MealEntityData>? list, MealEntityData? mealFavorite}) =>
+      FavoriteLoaded(list ?? this.list,
+          mealFavorite: mealFavorite ?? this.mealFavorite);
 
   @override
   List<Object> get props => [list];
